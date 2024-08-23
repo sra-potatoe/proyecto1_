@@ -1,19 +1,15 @@
-document.getElementById('login-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    window.location.href = 'project_selection.html';
-});
+const btnSignIn = document.getElementById("sign-in"),
+      btnSignUp = document.getElementById("sign-up"),
+      containerFormRegister = document.querySelector(".register"),
+      containerFormLogin = document.querySelector(".login");
 
-document.getElementById('register-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    window.location.href = 'project_selection.html';
-});
+btnSignIn.addEventListener("click", e => {
+    containerFormRegister.classList.add("hide");
+    containerFormLogin.classList.remove("hide")
+})
 
-document.getElementById('to-register').addEventListener('click', () => {
-    document.getElementById('login-container').classList.add('hidden');
-    document.getElementById('register-container').classList.remove('hidden');
-});
 
-document.getElementById('to-login').addEventListener('click', () => {
-    document.getElementById('register-container').classList.add('hidden');
-    document.getElementById('login-container').classList.remove('hidden');
-});
+btnSignUp.addEventListener("click", e => {
+    containerFormLogin.classList.add("hide");
+    containerFormRegister.classList.remove("hide")
+})
