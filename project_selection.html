@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="project-selection-container" class="form-container">
+        <h2>Select 3 Projects</h2>
+        <div id="projects-list" class="projects-list"></div>
+        <button id="submit-projects" class="submit-btn" disabled>Submit Projects</button>
+    </div>
+
+    <div id="justification-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Why did you select this project?</h3>
+            <textarea id="justification-text" rows="4"></textarea>
+            <button id="submit-justification" class="submit-btn">Submit</button>
+        </div>
+    </div>
+
+    <script src="js/project_selection.js"></script>
+</body>
+</html>
