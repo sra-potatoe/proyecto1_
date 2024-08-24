@@ -1,62 +1,172 @@
-#dashboard-container {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    margin-bottom: 10px;
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+.menu-dashboard {
+    width: 200px;
+    background-color: #ffffff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.menu-dashboard .top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #6B3D52;
+    color: #ffffff;
+}
+
+.menu-dashboard .logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-dashboard .logo img {
+    width: 30px;
+}
+
+.menu-dashboard .logo span {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.menu-dashboard .toggle {
+    cursor: pointer;
+}
+
+.menu-dashboard .input-search {
+    width: 100%;
+    margin: 20px 0;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-dashboard .input-search i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.menu-dashboard .input-search .input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 20px;
     color: #333;
+    font-size: 16px;
+}
+
+.menu-dashboard .menu .enlace {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-dashboard .menu .enlace:hover {
+    background-color: #e0e0e0;
+}
+
+.menu-dashboard .menu .enlace i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #f9f9f9;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6B3D52;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.card-icon i {
     font-size: 24px;
 }
 
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.card-info h2 {
+    margin: 0;
 }
 
-.selected-project, .most-selected-project {
-    padding: 15px;
-    border: 1px solid #ddd;
+.card-info p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.chart {
+    height: 300px;
+    margin: 20px 0;
+    background-color: #ffffff;
     border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.selected-project:hover, .most-selected-project:hover {
-    background-color: #e0e0e0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#responses-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.selected-project strong, .most-selected-project strong {
-    display: block;
-    font-size: 18px;
+#responses-table th, #responses-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#responses-table th {
+    background-color: #6B3D52;
+    color: #ffffff;
+}
+
+#responses-table td {
+    background-color: #ffffff;
     color: #333;
-}
-
-.selected-project p, .most-selected-project p {
-    margin-top: 5px;
-    color: #666;
-}
-
-.back-btn {
-    padding: 10px 20px;
-    border: none;
-    background-color: #333;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.back-btn:hover {
-    background-color: #555;
 }

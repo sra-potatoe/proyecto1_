@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Permisos</title>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/admin_permissions.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Administración de Permisos de Usuarios</h1>
+        <div class="permissions-table">
+            <table id="permissions-table">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Acceso a</th>
+                        <th>Permisos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="add-permission">
+            <h2>Agregar Nuevo Permiso</h2>
+            <form id="add-permission-form">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="access">Acceso a:</label>
+                <select id="access" name="access" required>
+                    <option value="dashboard">Dashboard</option>
+                    <option value="responses">Respuestas</option>
+                    <option value="projects">Proyectos</option>
+                    <option value="settings">Configuración</option>
+                </select>
+                <label for="permissions">Permisos:</label>
+                <select id="permissions" name="permissions" multiple required>
+                    <option value="read">Leer</option>
+                    <option value="write">Escribir</option>
+                    <option value="delete">Eliminar</option>
+                </select>
+                <button type="submit" class="submit-btn">Agregar Permiso</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CUSTOM JS -->
+    <script src="js/admin_permissions.js"></script>
+</body>
+</html>

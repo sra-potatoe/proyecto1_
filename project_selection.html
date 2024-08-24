@@ -1,23 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Selection</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Escoge tu Proyecto</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./css/styles_project.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <!-- CUSTOM JS -->
+    <script src="./js/menu.js" defer></script>
 </head>
-<body>
-    <div id="project-selection-container" class="form-container">
-        <h2>Select 3 Projects</h2>
-        <div id="projects-list" class="projects-list"></div>
-        <button id="submit-projects" class="submit-btn" disabled>Submit Projects</button>
+<body style="display: flex;">
+    <div class="menu-dashboard" style="width: 250px; background-color: #ffffff; height: 100vh; position: fixed; left: 0; top: 0; overflow-y: auto;">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+            <div class="logo">
+                <img src="./img/unilogo.png" alt="">
+                <span>UniEleccion</span>
+            </div>
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+        <!-- INPUT SEARCH -->
+        <div class="input-search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="input" placeholder="Buscar">
+        </div>
+        <!-- MENU -->
+        <div class="menu">
+            <a href="profile.html" class="enlace">
+                <i class="bx bx-user"></i>
+                <span>Perfil</span>
+            </a>
+            <a href="dashboard.html" class="enlace">
+            <div class="enlace">
+                <i class="bx bx-grid-alt"></i>
+            
+                <span>Dashboard Y usuarios</span>
+            </div>
+            </a>
+            <a href="respuestas.html" class="enlace">
+            <div class="enlace">
+                <i class="bx bx-message-square"></i>
+                <span>Respuestas</span> 
+            </div>
+            </a>
+            <a href="admin_permissions.html" class="enlace">
+            <div class="enlace">
+                <i class="bx bx-cog"></i>
+                <span>Permisos</span>
+            </div>
+            </a>
+        </div>
     </div>
 
+    <!-- Contenido de la Página de Selección de Proyectos -->
+    <div class="main-content" style="margin-left: 250px; padding: 20px; flex-grow: 1;">
+        <div class="title">
+            Escoge tu Proyecto
+        </div>
+        <div class="container">
+            <div class="large-box">
+                <div class="cards-container">
+                    <div class="card project-item" data-index="0">
+                        <h3>Sistema de Gestión de Tareas</h3>
+                        <p><strong>Tipo de App:</strong> Web</p>
+                        <p><strong>Área:</strong> Productividad</p>
+                    </div>
+                    <div class="card project-item" data-index="1">
+                        <h3>Plataforma de E-Learning</h3>
+                        <p><strong>Tipo de App:</strong> Web</p>
+                        <p><strong>Área:</strong> Educación</p>
+                    </div>
+                    <div class="card project-item" data-index="2">
+                        <h3>Aplicación de Recordatorio de Medicamentos</h3>
+                        <p><strong>Tipo de App:</strong> Móvil</p>
+                        <p><strong>Área:</strong> Salud</p>
+                    </div>
+                    <div class="card project-item" data-index="3">
+                        <h3>Sistema de Reservas para Restaurantes</h3>
+                        <p><strong>Tipo de App:</strong> Web</p>
+                        <p><strong>Área:</strong> Gastronomía</p>
+                    </div>
+                    <div class="card project-item" data-index="4">
+                        <h3>Base de Datos de Árboles Urbanos</h3>
+                        <p><strong>Tipo de App:</strong> Web</p>
+                        <p><strong>Área:</strong> Medio Ambiente</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table class="tablaJustificacion" id="tablaJustificacion">
+                    <tr>
+                        <td>Proyecto1</td>
+                        <td>Justificación 1</td>
+                        <td class="delete-column"><button class="delete-btn">X</button></td>
+                    </tr>
+                    <tr>
+                        <td>Proyecto2</td>
+                        <td>Justificación 2</td>
+                        <td class="delete-column"><button class="delete-btn">X</button></td>
+                    </tr>
+                    <tr>
+                        <td>Proyecto3</td>
+                        <td>Justificación 3</td>
+                        <td class="delete-column"><button class="delete-btn">X</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Botón Subir -->
+            <div class="container">
+                <button id="scrollUpButton" class="scroll-up-btn">Subir</button>
+            </div>
+        </div>
+
+        <a href="#tablaJustificacion" class="floating-button"><img src="img/flechaBlanca.png" alt=""></a>
+    </div>
+
+    <!-- Modal para detalles del proyecto -->
+    <div id="project-details-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Detalles del Proyecto</h3>
+            <table class="details-table">
+                <tr>
+                    <td><strong>Descripción:</strong></td>
+                    <td id="project-description">Lorem ipsum dolor sit amet...</td>
+                </tr>
+                <tr>
+                    <td><strong>Objetivos:</strong></td>
+                    <td id="project-objectives">Facilitar la organización de tareas...</td>
+                </tr>
+                <tr>
+                    <td><strong>Estado:</strong></td>
+                    <td id="project-status">Propuesta</td>
+                </tr>
+                <tr>
+                    <td><strong>Tiempo de Desarrollo:</strong></td>
+                    <td id="project-duration">8 semanas</td>
+                </tr>
+                <tr>
+                    <td><strong>Integrantes:</strong></td>
+                    <td id="project-members">4</td>
+                </tr>
+                <tr>
+                    <td><strong>Especialidades Requeridas:</strong></td>
+                    <td id="project-specialties">Backend, Frontend, UI/UX</td>
+                </tr>
+            </table>
+            <button id="select-project" class="submit-btn">Seleccionar</button>
+            <button id="cancel-details" class="cancel-btn">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Justification Modal -->
     <div id="justification-modal" class="modal hidden">
         <div class="modal-content">
-            <h3>Why did you select this project?</h3>
+            <h3>¿Por qué elegiste este proyecto?</h3>
             <textarea id="justification-text" rows="4"></textarea>
-            <button id="submit-justification" class="submit-btn">Submit</button>
+            <button id="submit-justification" class="submit-btn">Subir</button>
+            <button id="cancel-justification" class="cancel-btn">Cancelar</button>
         </div>
     </div>
 

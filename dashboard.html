@@ -1,23 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/dashboard.css"> 
+    <title>Dashboard Interactivo</title>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div id="dashboard-container" class="form-container">
-        <h2>Your Selected Projects</h2>
-        <div id="selected-projects" class="projects-list"></div>
-
-        <h2>Most Selected Projects</h2>
-        <div id="most-selected-projects" class="projects-list"></div>
-
-        <button id="back-to-selection" class="back-btn">Back to Selection</button>
-    </div>
-
-    <script src="js/dashboard.js"></script>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="menu-dashboard">
+            <div class="top-menu">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/30" alt="Logo">
+                    <span>Dashboard</span>
+                </div>
+                <i class="fas fa-bars toggle"></i>
+            </div>
+            <div class="input-search">
+                <i class="fas fa-search"></i>
+                <input type="text" class="input" placeholder="Buscar...">
+            </div>
+            <div class="menu">
+                <div class="enlace" id="overview-link"><i class="fas fa-home"></i> Resumen</div>
+                <div class="enlace" id="project-stats-link"><i class="fas fa-project-diagram"></i> Estadísticas de Proyectos</div>
+                <div class="enlace" id="area-stats-link"><i class="fas fa-map"></i> Estadísticas de Áreas</div>
+                <div class="enlace" id="user-responses-link"><i class="fas fa-users"></i> Respuestas de Usuarios</div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview -->
+            <section id="overview" class="section">
+                <h1>Resumen General</h1>
+                <div class="card summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="card-info">
+                        <h2>Total de Proyectos Seleccionados</h2>
+                        <p id="total-projects">0</p>
+                    </div>
+                </div>
+                <div class="card summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <div class="card-info">
+                        <h2>Total de Respuestas</h2>
+                        <p id="total-responses">0</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Project Stats -->
+            <section id="project-stats" class="section">
+                <h1>Estadísticas de Proyectos</h1>
+                <div id="project-chart" class="chart"></div>
+            </section>
+            <!-- Area Stats -->
+            <section id="area-stats" class="section">
+                <h1>Estadísticas de Áreas</h1>
+                <div id="area-chart" class="chart"></div>
+            </section>
+            <!-- User Responses -->
+          
+    <!-- CUSTOM JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/dashboard.js"></script>
 </body>
 </html>
